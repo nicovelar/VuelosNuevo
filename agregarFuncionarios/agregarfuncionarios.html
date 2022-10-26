@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js" integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="agregarfuncionarios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/dia/dia.html">Dia</a>
+        <a class="nav-item nav-link" href="/funcionarios/funcionarios.html">Funcionarios</a>
+        <a class="nav-item nav-link" href="/vuelos/vuelos.html">Vuelos</a>
+        <a class="nav-item nav-link" href="/imprimir/imprimir.html">Imprimir</a>
+      </div>
+    </div>
+  </nav> <br>
+
+  <h1 class="title"></h1>
+
+  <div class="filtro">
+    <label>Filtrar Por:</label>  
+    <select id="filtro">
+      <option value="NOFILTRAR">NO FILTRAR</option>
+      <option value="ENCARGADO">ENCARGADO</option>
+      <option value="AUXILIAR">AUXILIAR</option>
+      <option value="6HS">6HS</option>
+      <option value="OPERARIO">OPERARIO</option>
+    </select>
+    <button type="button" onclick="filtrar()" class="btn btn-secondary">FILTRAR</button> 
+    
+  </div> <br>
+
+  <input type="text" id="myInput" placeholder="Buscar por código..." title="Type in a name">
+  <button  onclick="buscarPorCodigo()" class="btn btn-secondary" > Buscar</button>
+ 
+
+      <!-- Sección donde se ven los encargados -->
+      <article>
+        <table class="crud-table-encargados">
+          <thead>
+            <tr>
+            <th>Código</th>
+            <th>Cargo</th>
+            <th>Horario Entrada</th>
+            <th>Horario Salida</th>
+            <th>Telefono</th>
+            <th>Disponibilidad</th>
+            <th>Acción</th>
+            <th>Vuelos</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </article>
+
+    
+    <a onclick="atras()" class="arrow left"></a>
+    <a onclick="adelante()" class="arrow right"></a>
+
+     <!-- Acciones para Editar o Eliminar -->
+     <template id="crud-template">
+        <tr>
+          <td class="codigo"></td>
+          <td class="cargo"></td>
+          <td class="horarioEntrada"></td>
+          <td class="horarioSalida"></td>
+          <td class="telefono"></td>
+          <td class="disponibilidad"></td>
+          <td>
+            <button class="agregar btn btn-warning">Agregar Funcionario</button>
+          </td>
+          <td class="vuelos"></td>
+         
+          
+        </tr>
+      </template> <br> <br> <br> <br> <br>
+
+
+       <!-- Sección donde se ven los encargados para el vuelo-->
+       <article>
+        <table class="crud-table-encargados-vuelo" >
+          <thead>
+            <tr>
+            <th>Código</th>
+            <th>Cargo</th>
+            <th>Horario Entrada</th>
+            <th>Horario Salida</th>
+            <th>Disponibilidad</th>
+            <th>Trabajo</th>
+            </tr>
+          </thead>
+          <tbody class="wrapper"></tbody>
+        </table>
+    </article>
+      <!-- Acciones para Editar o Eliminar -->
+      <template id="crud-template-vuelo">
+        <tr class="draggable" draggable="true">
+          <td class="codigo"></td>
+          <td class="cargo"></td>
+          <td class="horarioEntrada"></td>
+          <td class="horarioSalida"></td>
+          <td class="disponibilidad"></td>
+          <td class="trabajo">
+            <select class="trabajos">
+              <option value="ENC">ENC</option>
+              <option value="OP">OP</option>
+              <option value="MICRO">MICRO</option>
+              <option value="CAMION">CAMION</option>
+              <option value="LIMP">LIMP</option>
+              <option value="CINTA">CINTA</option>
+              <option value="CHECKIN">CHECK IN</option>
+            </select> <br>
+          </td>
+          <td>
+            <button class="eliminar btn btn-danger">Eliminar</button>
+          </td> 
+          
+        </tr>
+      </template>
+
+      <div class="enviar">
+
+      </div>  <br> <br> <br> <br>
+
+      <template id="botonEnviar"> <br> <br>
+        <button id="botonEnviar" type="submit" class="enviar style-4 button4">Enviar </button>
+      </template>
+    
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="agregarFuncionarios.js"></script>
+<script>
+  const dragArea = document.querySelector(".wrapper")
+  new Sortable(dragArea, {
+    animation: 350
+  })
+</script>
+</html>

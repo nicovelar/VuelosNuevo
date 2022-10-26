@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imprimir.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Imprimir</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/dia/dia.html">Dia</a>
+        <a class="nav-item nav-link" href="/funcionarios/funcionarios.html">Funcionarios</a>
+        <a class="nav-item nav-link" href="/vuelos/vuelos.html">Vuelos</a>
+      </div>
+    </div>
+  </nav> <br>
+
+    <h2 class="crud-title"></h2> <br> <br> <br>
+    <div class="vuelo">
+    
+       <!-- Sección donde se ven los vuelos -->
+       <div class="crud-table">
+
+       </div>
+       
+    </div>
+    
+     <!-- Acciones para Editar o Eliminar -->
+     <template id="crud-template">
+      
+      <div class= "containers"> 
+        <div style="display:inline-flex">
+          <div class="title">
+            <h1 class="nombre"> </h1>
+            <h1 class="arribo"> </h1>
+            <h1 class="partida"> </h1>
+          </div>
+        </div> <br> <br>
+      
+        <table >
+            
+          <tr>
+            <th>ENC</th>
+            <td class ="enc"></td>
+          </tr>
+          <tr>
+            <th>OP</th>
+            <td class="op"></td>
+          </tr>
+          <tr>
+            <th>MICRO</th>
+            <td class="micro"></td>
+          </tr>
+          <tr>
+            <th>CAMION</th>
+            <td class="camion"></td>
+          </tr>
+          <tr>
+          <tr>
+            <th>LIMP</th>
+            <td class="limp"></td>
+          </tr>
+          <tr>
+            <th>CINTA</th>
+            <td class="cinta"></td>
+          </tr>
+          <tr>
+            <th>CHECK IN</th>
+            <td class="checkin"></td>
+          </tr>
+      
+      </table> <br> <br> 
+
+      </div> 
+    </template> 
+
+    <a onclick="atras()" class="arrow left oculto-impresion"></a>
+    <a onclick="adelante()" class="arrow right oculto-impresion"></a>
+    <script src="imprimir.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

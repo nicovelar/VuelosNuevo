@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="funcionarios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Funcionarios</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/index.html">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/dia/dia.html">Dia</a>
+        <a class="nav-item nav-link" href="/vuelos/vuelos.html">Vuelos</a>
+        <a class="nav-item nav-link" href="/imprimir/imprimir.html">Imprimir</a>
+      </div>
+    </div>
+  </nav> <br>
+
+<!-- Sección de crear o modificar -->
+<article>
+  <h2 class="crud-title">Agregar Funcionario</h2> <br>
+
+    <form class="crud-form">
+        <input type="text" name="codigo" placeholder="Código" required> <br> <br>
+        <input type="text" name="apellido" placeholder="Apellido" required> <br> <br>
+        <input type="text" name="telefono" placeholder="Telefono"> <br> <br>
+        <input type="time" name="horarioEntrada" placeholder="Horario Entrada"> <br> <br>
+        <input type="time" name="horarioSalida" placeholder="Horario Salida"> <br> <br>
+
+        <label for="cargo">Cargo:</label>
+        <select id="cargo">
+          <option value="ENCARGADO">ENCARGADO</option>
+          <option value="6HS">6HS</option>
+          <option value="AUXILIAR">AUXILIAR</option>
+          <option value="OPERARIO">OPERARIO</option>
+        </select> <br> <br>
+
+        <label for="disponibilidad">Disponibilidad:</label>
+        <select id="disponibilidad">
+          <option value="SI">SI</option>
+          <option value="BPS">BPS</option>
+          <option value="DESC">DESC</option>
+        </select> <br> <br>
+  
+        <input type="checkbox" id="diaSemana1" value="1"> <label for="cbox2">Lunes</label>
+        <input type="checkbox" id="diaSemana2" value="2"> <label for="cbox2">Martes</label>
+        <input type="checkbox" id="diaSemana3" value="3"> <label for="cbox2">Miercoles</label>
+        <input type="checkbox" id="diaSemana4" value="4"> <label for="cbox2">Jueves</label>
+        <input type="checkbox" id="diaSemana5" value="5"> <label for="cbox2">Viernes</label>
+        <input type="checkbox" id="diaSemana6" value="6"> <label for="cbox2">Sabado</label>
+        <input type="checkbox" id="diaSemana7" value="0"> <label for="cbox2">Domingo</label> <br>
+        <button type="submit" class="style-4 button4" value="Enviar">Enviar</button> <br> <br>
+        <input type="hidden" name="id">
+    </form>
+</article> <br> <br>
+
+<div class="filtro">
+  <label>Filtrar Por:</label>  
+  <select id="filtro">
+    <option value="NOFILTRAR">NO FILTRAR</option>
+    <option value="ENCARGADO">ENCARGADO</option>
+    <option value="AUXILIAR">AUXILIAR</option>
+    <option value="6HS">6HS</option>
+    <option value="OPERARIO">OPERARIO</option>
+  </select>
+  <button type="button" class="btn btn-secondary filtrar" onclick="filtrar()">Filtrar</button> 
+  <input type="text" id="myInput" placeholder="Buscar por código..." title="Type in a name">
+  <button  onclick="buscarPorCodigo()" class="btn btn-secondary" > Buscar</button>
+</div> <br>
+
+
+    <!-- Sección donde se ven los encargados -->
+    <article>
+        <table class="crud-table-encargados">
+          <thead>
+            <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Horario Entrada</th>
+            <th>Horario Salida</th>
+            <th>Cargo</th>
+            <th>Telefono</th>
+            <th>Disponibilidad</th>
+            <th>Dia Semana</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </article> 
+
+    <a onclick="atras()" class="arrow left"></a>
+    <a onclick="adelante()" class="arrow right"></a>
+    <br> <br> <br> <br> <br>
+    
+    <!-- Acciones para Editar o Eliminar -->
+    <template id="crud-template">
+        <tr>
+          <td class="codigo"></td>
+          <td class="apellido"></td>
+          <td class="horarioEntrada"></td>
+          <td class="horarioSalida"></td>
+          <td class="cargo"></td>
+          <td class="telefono"></td>
+          <td class="disponibilidad"></td>
+          <td class="diaSemana"></td>
+          
+          <td>
+            <button class="edit btn btn-info" >Editar</button>
+            <button class="delete btn btn-danger">Eliminar</button>
+          </td>
+          
+        </tr>
+      </template>
+    </body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="funcionarios.js"></script>
+    </html>
+</body>
+</html>

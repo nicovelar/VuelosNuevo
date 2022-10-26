@@ -1,0 +1,75 @@
+.containers {
+margin-left: 6.5%;
+}
+
+.crud-title {
+    margin-left: 15%;
+    border-style: solid;
+    border-width: 2px;
+    width: 40%;
+    display: inline;;
+}
+
+.title {
+    border-style: solid;
+    border-width: 2px;
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+th {
+    width: 15%;
+    border-style: solid; 
+    border-width: 2px;
+    text-align: justify;
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
+}
+
+td {
+    border-style: solid; 
+    border-width: 2px;
+    width: 700px;
+    font-weight: 700;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.arrow {
+    position: absolute;;
+    margin-top: 1%;
+    width: 3vmin;
+    height: 3vmin;
+    background: transparent;
+    border-top: 1vmin solid black;
+    border-right: 1vmin solid black;
+    box-shadow: 0 0 0 lightgray;
+    transition: all 200ms ease;
+  }
+  .arrow.left {
+    left: 7vw;
+    transform: translate3d(0, -50%, 0) rotate(-135deg);
+  }
+  .arrow.right {
+    right: 34.5vw;
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+  }
+  .arrow:hover {
+    border-color: orange;
+    box-shadow: 0.5vmin -0.5vmin 0 white;
+  }
+  .arrow:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -60%) rotate(45deg);
+    width: 200%;
+    height: 200%;
+  }
+
+  @media print{
+    .oculto-impresion, .oculto-impresion *{
+      display: none !important;
+    }
+  }
