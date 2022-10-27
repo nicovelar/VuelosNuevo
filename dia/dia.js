@@ -8,7 +8,6 @@ $title = d.querySelector(".crud-title")
 
   const getDia = async () => {
 
-
       try {
         let res = await fetch("http://localhost:3000/Dia")
         json = await res.json()
@@ -57,9 +56,5 @@ d.addEventListener("submit", async e => {
           let message = err || "Ocurrió un error al publicar"
           $formDia.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`)
         }
-        setTimeout(function(){
-          window.location.reload();
-        });
   }
-  
   })

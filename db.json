@@ -23,11 +23,10 @@
       "HorarioSalida": "13:45",
       "Cargo": "OPERARIO",
       "Telefono": "0961231231",
-      "Disponibilidad": "DESC",
+      "Disponibilidad": "SI",
       "DiaSemana": [
         "1",
-        "2",
-        "4",
+        "3",
         "6"
       ],
       "id": 2
@@ -80,22 +79,6 @@
         "6"
       ],
       "id": 5
-    },
-    {
-      "Codigo": "733",
-      "Apellido": "TAVAREZ",
-      "HorarioEntrada": "06:00",
-      "HorarioSalida": "12:00",
-      "Cargo": "6HS",
-      "Telefono": "0961231231",
-      "Disponibilidad": "SI",
-      "DiaSemana": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "id": 6
     },
     {
       "Codigo": "1011",
@@ -321,7 +304,7 @@
     }
   ],
   "Dia": {
-    "Dia": "2022-10-26"
+    "Dia": "2022-10-27"
   },
   "Vuelos": [
     {
@@ -399,7 +382,7 @@
       ]
     },
     {
-      "Nombre": "carguero2",
+      "Nombre": "carguero3",
       "Arribo": "19:07",
       "Partida": "20:06",
       "Funcionarios": [
@@ -419,39 +402,31 @@
       "id": 8
     },
     {
-      "Nombre": "CM 283/8434343",
-      "Arribo": "23:35",
-      "Partida": "08:00",
-      "id": 9,
-      "Funcionarios": [
-        "469",
-        "980"
-      ],
-      "Cargos": [
-        {
-          "codigo": "469",
-          "trabajo": "ENC"
-        },
-        {
-          "codigo": "980",
-          "trabajo": "ENC"
-        }
-      ]
-    },
-    {
       "Nombre": "GOL 7632342423",
       "Arribo": "00:39",
       "Partida": "02:43",
       "id": 10,
       "Funcionarios": [
-        "666"
+        "666",
+        "769"
       ],
       "Cargos": [
         {
           "codigo": "666",
           "trabajo": "ENC"
+        },
+        {
+          "codigo": "769",
+          "trabajo": "ENC",
+          "backgroundColor": "rgb(89, 165, 89)"
         }
       ]
+    },
+    {
+      "Nombre": "CM 283/84sdadsa",
+      "Arribo": "20:20",
+      "Partida": "20:21",
+      "id": 11
     }
   ]
 }
